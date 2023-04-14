@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./vendors/jquery.min.js"></script>
+    <script src="scripts/client.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>To Do App</title>
+</head>
+<body>
+
+    <section id="add-task-section">
+        <h2>Add a New Task!</h2>
+        <input type="text" name="" id="task-name-input" />
+        <input type="text" name="" id="task-description-input" />
+        <button type="submit" id="submit-btn">Add Task</button>
+    </section>
+    
+    <section id="task-display-section">
+        <h2>Your Tasks!</h2>
+        <table>
+            <thead>
+                <th>Task</th>
+                <th>Description</th>
+                <th>Complete?</th>
+                <th>Delete</th>
+            </thead>
+            <tbody id="task-display">
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>
