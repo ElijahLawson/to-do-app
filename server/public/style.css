@@ -1,0 +1,27 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    background: rgb(2,0,36);
+    background: linear-gradient(37deg, rgba(2,0,36,1) 0%, rgba(80,80,185,1) 25%, rgba(54,164,101,1) 100%);
+}
+
+.container {
+    border: 1.5px solid whitesmoke;
+    border-radius: 2%;
+    width: 600px;
+    margin-top: 200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tasks-div {
+
+}
