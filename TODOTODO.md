@@ -37,4 +37,7 @@ Front End Components:
 
 
 Styling:
+    Background Gradient
+    Fade out animation when marked complete
+    Bootstrap implementation
     
