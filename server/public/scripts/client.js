@@ -1,3 +1,4 @@
+
 $(document).ready(onReady);
 
 function onReady() {
@@ -22,7 +23,7 @@ function renderTasksToDom() {
 
       for (let task of tasksFromServer) {
         if (task.is_completed === true) {
-            $("#task-display").append(`
+            $("#task-display").append(`f
             <tr data-id=${task.id} class='completed-task'>
                 <td>${task.name}</td>
                 <td>${task.description}</td>
@@ -54,6 +55,9 @@ function postNewTaskToServer(event) {
     description: $("#task-description-input").val(),
   };
 
+  $("#task-name-input").val('');
+  $("#task-description-input").val('')
+
   $.ajax({
     method: "POST",
     data: newTaskToPost,
@@ -68,13 +72,17 @@ function postNewTaskToServer(event) {
 }
 
 function markTaskComplete() {
+
     let idToUpdate = $(this).parent().parent().data("id");
     $.ajax({
         method: 'PUT',
         url: `/tasks/${idToUpdate}`
     }).then(function (response) {
         renderTasksToDom();
+        testFadeTo($(this));
+        console.log($(this).parent().parent());
     })
+
 }
 
 function deleteTask() {
@@ -85,4 +93,9 @@ function deleteTask() {
   }).then(function (response) {
     renderTasksToDom();
   });
+}
+
+function testFadeTo($this) {
+    console.log($this.parent().parent());
+    $this.parent().parent().fadeTo("slow", 0.33);
 }

@@ -12,8 +12,8 @@ body {
 }
 
 .container {
-    border: 1.5px solid whitesmoke;
-    border-radius: 2%;
+    border: 1px solid whitesmoke;
+    border-radius: 20px;
     width: 600px;
     margin-top: 200px;
     margin: auto;
@@ -22,6 +22,17 @@ body {
     align-items: center;
 }
 
-.tasks-div {
+h2, h1, td {
+    font-family: 'Mukta', sans-serif;
+}
 
+@keyframes fade-it-out {
+    from {opacity: 1}
+    to {opacity: .33}
+}
+.completed-task {
+    
+    animation: fade-it-out;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
