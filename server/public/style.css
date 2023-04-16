@@ -31,7 +31,6 @@ h1, h2, td {
     to {opacity: .33}
 }
 .completed-task {
-    
     animation: fade-it-out;
     animation-duration: 1s;
     animation-fill-mode: forwards;
