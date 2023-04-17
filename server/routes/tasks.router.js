@@ -1,7 +1,9 @@
+//DEPENDENCIES
 const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
+//Have that router get that get
 router.get('/', (req, res) => {
     let sqlText = 'SELECT * FROM "tasks";';
 
@@ -15,6 +17,7 @@ router.get('/', (req, res) => {
     })
 })
 
+//now it postin' up
 router.post('/', (req, res) => {
     let name = req.body.name;
     let description = req.body.description;
@@ -35,6 +38,7 @@ router.post('/', (req, res) => {
     })
 })
 
+//router.put be PUTTIN in that work
 router.put('/:id', (req, res) => {
     let idToUpdate = req.params.id;
     let sqlText = `
@@ -51,6 +55,7 @@ router.put('/:id', (req, res) => {
     })
 })
 
+//hey database, get rid of that thang
 router.delete('/:id', (req, res) => {
     let idToDelete = req.params.id;
     console.log(idToDelete);

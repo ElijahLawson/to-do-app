@@ -5,12 +5,14 @@ function onReady() {
   renderTasksToDom();
 }
 
+//Clicky clicky, hear hear!
 function setupClickListeners() {
   $("#submit-btn").on("click", postNewTaskToServer);
   $("#task-display").on("click", ".complete-btn", markTaskComplete);
   $("#task-display").on("click", ".delete-btn", deleteTask);
 }
 
+//Render the DOM based off the database GET query, conditionally applied based of if task is completed
 function renderTasksToDom() {
   $.ajax({
     method: "GET",
@@ -47,6 +49,7 @@ function renderTasksToDom() {
     });
 }
 
+//Post the new task from the input fields to the server
 function postNewTaskToServer(event) {
   event.preventDefault();
   let newTaskToPost = {
@@ -70,6 +73,7 @@ function postNewTaskToServer(event) {
     });
 }
 
+//PUT method function to update an item when the complete button is pushed
 function markTaskComplete() {
   let idToUpdate = $(this).parent().parent().data("id");
   $.ajax({
@@ -77,11 +81,11 @@ function markTaskComplete() {
     url: `/tasks/${idToUpdate}`,
   }).then(function (response) {
     renderTasksToDom();
-    testFadeTo($(this));
     console.log($(this).parent().parent());
   });
 }
 
+//DELETE method function to delete an item from the database
 function deleteTask() {
   let idToDelete = $(this).parent().parent().data("id");
   $.ajax({
@@ -90,9 +94,4 @@ function deleteTask() {
   }).then(function (response) {
     renderTasksToDom();
   });
-}
-
-function testFadeTo($this) {
-  console.log($this.parent().parent());
-  $this.parent().parent().fadeTo("slow", 0.33);
 }
